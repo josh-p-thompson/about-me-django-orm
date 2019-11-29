@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+About
+{% endblock %}
+{% block card %}
+<div class ='row'>
+    <div class = 'about-card card w-100'>
+        <div class='row'>
+            <div class= 'col'>
+                {{ card.title|safe }}
+                {{ card.sub_title_1|safe }}
+                {{ card.content_1|safe }}
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col'>
+                {{ card.sub_title_2|safe }}
+                {{ card.content_2|safe }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
