@@ -19,6 +19,6 @@ from website import views
 
 urlpatterns = [
     path('', views.index),
-    # path('projects', views.projects),
+    path('projects', views.projects),
     path('admin/', admin.site.urls),
 ]

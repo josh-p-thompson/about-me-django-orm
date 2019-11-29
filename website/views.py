@@ -1,11 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import requests
 import markdown
-import glob
-import os
-
-from .models import About
+from .models import About, Project
 
 # Create your views here.
 def index(request):
@@ -19,7 +15,6 @@ def index(request):
             'content_1': markdown_convert(about.content_1),
             'content_2': markdown_convert(about.content_2),
         })
-    print(cards)
     context = {
         'title': 'about',
         'path': '/', 
@@ -28,21 +23,29 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-
-# def projects(request):
-#     print('---------- rendering Projects')
-#     context = {
-#         'title': 'projects',
-#         'path': 'projects', 
-#         'cards': ,
-#         'pages': pages(),
-#     }
-#     return render(request, 'projects.html', context)
+def projects(request):
+    print('---------- rendering Projects')
+    cards = []
+    for project in Project.objects.all(): 
+        cards.append({
+            'title': project.title,
+            'sub_title': project.sub_title,
+            'link': project.link,
+            'image': project.image.url,
+        })
+    print(cards)
+    context = {
+        'title': 'projects',
+        'path': 'projects', 
+        'cards': cards,
+        'pages': pages(),
+    }
+    return render(request, 'projects.html', context)
 
 def pages(): 
     return [
         {'title': 'about', 'path': '/'}, 
-        # {'title': 'projects', 'path': 'projects'}, 
+        {'title': 'projects', 'path': 'projects'}, 
     ]
 
 def markdown_convert(text): 
