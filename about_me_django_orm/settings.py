@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'about_me_django_orm_website',
         'USER': 'about_me_django_orm',
         'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'HOST': 'https://about-me-django-orm.herokuapp.com/',
         'PORT': '5432',
     }
 }
