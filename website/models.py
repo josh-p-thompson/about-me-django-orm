@@ -12,4 +12,4 @@ class Project(models.Model):
     title = models.CharField(max_length=127)
     sub_title = models.CharField(max_length=127)
     link = models.CharField(max_length=127)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='website/static/images/')

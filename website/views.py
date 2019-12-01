@@ -9,11 +9,11 @@ def index(request):
     cards = []
     for about in About.objects.all(): 
         cards.append({
-            'title': markdown_convert(about.title),
-            'sub_title_1': markdown_convert(about.sub_title_1),
-            'sub_title_2': markdown_convert(about.sub_title_2),
-            'content_1': markdown_convert(about.content_1),
-            'content_2': markdown_convert(about.content_2),
+            'title': about.title,
+            'sub_title_1': about.sub_title_1,
+            'sub_title_2': about.sub_title_2,
+            'content_1': about.content_1,
+            'content_2': about.content_2,
         })
     context = {
         'title': 'about',
@@ -31,9 +31,8 @@ def projects(request):
             'title': project.title,
             'sub_title': project.sub_title,
             'link': project.link,
-            'image': project.image.url,
+            'image': project.image,
         })
-    print(cards)
     context = {
         'title': 'projects',
         'path': 'projects', 

@@ -78,11 +78,7 @@ h6 {
     margin-bottom: 3rem;
     border-radius: 0;
     border-color: transparent;
-    filter: drop-shadow(4px 4px 4px #36393C)
-}
-
-.card-title a {
-    color:inherit;
+    filter: drop-shadow(4px 4px 4px #36393C);
 }
 
 @media (max-width: 575.98px) {
@@ -104,21 +100,8 @@ h6 {
     color: #3456E5;
 }
 
-.projects-card img {
+img.project-image {
     margin: auto;
     padding-top: 40px;
     filter: drop-shadow(0 0 0.25rem #36393C); 
 }
-
-.blog-card img {
-    margin: auto;
-    padding: 10px;
-    /* filter: drop-shadow(0 0 0.25rem #36393C);  */
-}
-
-.btn .fa {
-    transition: .3s transform ease-in-out;
-}
-
-.btn:not(.collapsed)  span{display:none}
-.btn.collapsed b {display:none}

@@ -8,15 +8,15 @@ About
     <div class = 'about-card card w-100'>
         <div class='row'>
             <div class= 'col'>
-                {{ card.title|safe }}
-                {{ card.sub_title_1|safe }}
-                {{ card.content_1|safe }}
+                <h4 class="card-title">{{ card.title }}</h4>
+                <h6 class="card-subtitle">{{ card.sub_title_1 }}</h6>
+                <p>{{ card.content_1 }}</p>
             </div>
         </div>
         <div class='row'>
             <div class='col'>
-                {{ card.sub_title_2|safe }}
-                {{ card.content_2|safe }}
+                <h6 class="card-subtitle">{{ card.sub_title_2 }}</h6>
+                <p>{{ card.content_2 }}</p>
             </div>
         </div>
     </div>
